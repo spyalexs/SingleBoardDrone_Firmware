@@ -12,8 +12,13 @@ typedef Eigen::Matrix<float, 3, 1> v3d;
 typedef Eigen::Matrix<float, 6, 1> v6d;
 typedef Eigen::Matrix<float, 3, 3> m3d;
 typedef Eigen::Matrix<float, 13, 13> m13d;
+typedef Eigen::Matrix<float, 12, 12> m12d;
 typedef Eigen::Matrix<float, 7, 1> v7d;
 typedef Eigen::Matrix<float, 8, 1> v8d;
+typedef Eigen::Matrix<float, 7, 13> m7d13;
+typedef Eigen::Matrix<float, 13, 7> m13d7;
+typedef Eigen::Matrix<float, 13, 1> v13d;
+
 
 typedef Eigen::Quaternionf quat;
 
@@ -24,6 +29,23 @@ class DroneState{
         quat rot;
         v3d position;
         v6d twist;
+
+        DroneState(){
+
+        }
+
+        DroneState(v13d vec){
+            position = vec.block<3,1>(0,0);
+            rot = vec.block<4,1>(3,0);
+            twist = vec.block<6,1>(7,0);
+        }
+
+        //update the current state from a vector
+        void update(v13d vec){
+            position = vec.block<3,1>(0,0);
+            rot = vec.block<4,1>(3,0);
+            twist = vec.block<6,1>(7,0);
+        }
 
         // please note order matters here... override the operator may not be the brighest of ideas but alas...
         // the "previous" state should come before the "current" state
@@ -41,6 +63,10 @@ class DroneState{
             //calculate the "error" between to drone states
             //for the time being this will be the positional error
             return (position - state_2.position).norm();
+        }
+
+        v13d to_vector(){
+            return v13d(position[0], position[1], position[2], rot.w(), rot.x(), rot.y(), rot.z(), twist[0], twist[1], twist[2], twist[3], twist[4], twist[5]);
         }
 };
 
@@ -146,12 +172,14 @@ class PhysicalSingeBoardDone{
             imu_pos << 0.0, .05, 0.0;
             imu_rot = quat(1.0, 0.0,0.0, 0.0);
 
-            gravitational_acceleration << 0.0, 0.0, 9.815;
+            gravitational_acceleration << 0.0, 0.0, -9.815;
 
             drag_first_order << 1.0, 1.0, 1.0, 0.1, 0.1, 0.1;
             drag_second_order << 0.0, 0.0, 0.0, 0.0, 0.0, 0.0;
 
             prop_drag_cof << 0.001, -0.001, 0.001, -0.001, 0.001, -0.001, 0.001, -0.001;
+
+            process_noise.setZero();
         }
 
         //for right now the origin of the drone is the dead center of the top of the pcb.
@@ -161,6 +189,9 @@ class PhysicalSingeBoardDone{
 
         //center of mass of the drone ...
         v3d com;
+
+        //center of drag of the drone
+        v3d cod;
 
         //mass of the drone
         float mass;
@@ -199,7 +230,7 @@ class PhysicalSingeBoardDone{
         v8d convert_forces_to_w(v8d f){
             return f.cwiseSqrt() / thrust_constant;
         }
-
         
+        m12d process_noise;
 
 };
