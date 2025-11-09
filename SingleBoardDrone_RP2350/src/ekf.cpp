@@ -7,6 +7,11 @@ Ekf::Ekf(std::shared_ptr<PhysicalSingeBoardDone> Drone){
     load_in_parameters();
 }
 
+DroneState Ekf::getCurrentState(){
+    
+    //
+}
+
 
 void Ekf::load_in_parameters(){
 
@@ -286,10 +291,31 @@ m13d Ekf::getJacobian(DroneState current_state){
     jacobian(12,11) = (drone->rotational_interia(1,1) - drone->rotational_interia(2,2)) / drone->rotational_interia(3,3) * current_state.twist(3);
 }
 
-void Ekf::propagate_gps_measurement(){
+void Ekf::propagate_gps_pos_measurement(){
 
 }
+void Ekf::propagate_gps_vel_measurement(){
 
-void Ekf::propagate_barometer_measurement(){
+}
+void Ekf::propagate_barometer_measurement(float measurement, v8d control){
+    m1d13 measurement_matrix;
+    measurement_matrix <<
+    0.0, 0.0, 1.0,
+    -2 * previous_state.rot.y() + 2 * previous_state.rot.x(),
+    2 * previous_state.rot.z() + 2 * previous_state.rot.w() - 4 * previous_state.rot.x(),
+    -2 * previous_state.rot.w() + 2 * previous_state.rot.z() - 4 * previous_state.rot.y(),
+    2 * previous_state.rot.x() + 2 * previous_state.rot.y(),
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0;
 
+    //predict the next measurement value
+    float predicted_measurement = measurement_matrix * previous_state.to_vector();
+
+    //calulcate the kalman gain
+    v13d kalman_gain = state_error_cov * measurement_matrix.transpose() * (measurement_matrix * state_error_cov * measurement_matrix.transpose() + barometer->barometer_variance).inverse();
+
+    //update the state based on the measurement
+    previous_state.update(previous_state.to_vector() + kalman_gain * (measurement - predicted_measurement));
+
+    //increment the state error covariance matrix
+    state_error_cov = (m13d::Identity() - kalman_gain * measurement_matrix) * state_error_cov;
 }

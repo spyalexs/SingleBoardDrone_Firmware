@@ -11,20 +11,20 @@
 //poll the imu if data is ready before getting the outstanding measurements
 #define POLL_BEFORE_GET true
 
-class IMU{
+class Barometer{
     public:
-        IMU();
+        Barometer();
 
         void ackDataReady();
-        void pollIMU();
+        void pollBarometer();
 
-        std::vector<std::pair<uint64_t, v7d>> getOutstandingMeasurements();
+        std::vector<std::pair<uint64_t, float>> getOutstandingMeasurements();
 
         bool data_ready = true;
         absolute_time_t data_ready_time;
 
         // queue of measurements that havent been intaken by the ekf yet
-        std::vector<std::pair<uint64_t, v7d>> outstanding_measurements;
+        std::vector<std::pair<uint64_t, float>> outstanding_measurements;
 
-        v7d imu_cov;
-}
+        float barometer_variance;
+};

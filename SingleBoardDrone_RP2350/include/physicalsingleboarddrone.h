@@ -18,6 +18,7 @@ typedef Eigen::Matrix<float, 8, 1> v8d;
 typedef Eigen::Matrix<float, 7, 13> m7d13;
 typedef Eigen::Matrix<float, 13, 7> m13d7;
 typedef Eigen::Matrix<float, 13, 1> v13d;
+typedef Eigen::Matrix<float, 1, 13> m1d13;
 
 
 typedef Eigen::Quaternionf quat;
@@ -208,6 +209,9 @@ class PhysicalSingeBoardDone{
         //imu pose
         v3d imu_pos;
         quat imu_rot;
+
+        //barometer position
+        v3d barometer_position;
 
         //acceleration due to gravity
         v3d gravitational_acceleration;
