@@ -14,12 +14,14 @@ typedef Eigen::Matrix<float, 3, 3> m3d;
 typedef Eigen::Matrix<float, 13, 13> m13d;
 typedef Eigen::Matrix<float, 12, 12> m12d;
 typedef Eigen::Matrix<float, 7, 1> v7d;
+typedef Eigen::Matrix<float, 2, 1> v2d;
+typedef Eigen::Matrix<float, 5, 1> v5d;
 typedef Eigen::Matrix<float, 8, 1> v8d;
+typedef Eigen::Matrix<int, 8, 1> v8i;
 typedef Eigen::Matrix<float, 7, 13> m7d13;
 typedef Eigen::Matrix<float, 13, 7> m13d7;
 typedef Eigen::Matrix<float, 13, 1> v13d;
 typedef Eigen::Matrix<float, 1, 13> m1d13;
-
 
 typedef Eigen::Quaternionf quat;
 
