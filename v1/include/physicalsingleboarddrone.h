@@ -2,8 +2,6 @@
 
 #include <Eigen/Dense>
 
-#include "pico/time.h"
-
 //physical descriptions of the drone...
 
 typedef Eigen::Matrix<float, 8, 6> m8d6;

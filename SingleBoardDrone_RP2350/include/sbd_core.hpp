@@ -3,8 +3,6 @@
 #include <Eigen/Dense>
 #include <cmath>
 
-#include "pico/time.h"
-
 #include "sbd_descriptions.hpp"
 
 typedef Eigen::Matrix<float, 2, 1> V2f;
@@ -25,8 +23,6 @@ class DDroneState;
 class DroneModel{
     public:
         DroneModel();
-
-
 
         M6f8 thruster_effect;
 
@@ -67,7 +63,7 @@ class DroneState{
         void update(DDroneState* ds, float dt);
         void update(std::vector<DDroneState*> dsv, std::vector<float> weights, float dt);
 
-        absolute_time_t stamp;
+        uint64_t stamp;
 
         float get_error(DroneState* state2);
         

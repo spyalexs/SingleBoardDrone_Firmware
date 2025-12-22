@@ -26,10 +26,9 @@
 #define SBD_THRUST_CONSTANT 0.1
 
 //@brief 3D rotational interation matrix
-#define SBD_ROT_INTERTIA Eigen::Matrix<float, 3, 3>(\
-    0.01, 0.0, 0.0,\
+#define SBD_ROT_INTERTIA 0.01, 0.0, 0.0,\
     0.0, 0.01, 0.0,\
-    0.0, 0.0, 0.01)
+    0.0, 0.0, 0.01
 
 //@brief Drone center of drag
 #define SBD_COD Eigen::Matrix<float, 3, 1>(0.0, 0.0, 0.0);
@@ -48,3 +47,5 @@
 
 //@brief rk45 integration error tolerance
 #define DYNAMIC_INTEGRATION_ERROR_TOLERANCE 1e7
+
+//copy test

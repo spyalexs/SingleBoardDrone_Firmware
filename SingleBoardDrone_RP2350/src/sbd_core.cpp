@@ -11,7 +11,7 @@ DroneModel::DroneModel(){
     second_order_drag_cofs = SBD_SECOND_DRAG;
     prop_drag = SDB_PROP_DRAG;
     gravitational_acceleration = GRAVITY_VECTOR;
-    rotational_interia = SBD_ROT_INTERTIA;
+    rotational_interia << SBD_ROT_INTERTIA;
     thrust_constant = SBD_THRUST_CONSTANT;
 
     //initialize the thruster control effects
@@ -146,7 +146,7 @@ void DroneState::update_rk45(float dt, V8f* control){
     DDroneState k2(this->get_increment(&k1, current_dynamic_timestep / 4), control);
     DDroneState k3(this->get_increment({&k1, &k2}, {.09375, .28125}, current_dynamic_timestep), control);
     DDroneState k4(this->get_increment({&k1, &k2, &k3}, {.879380974, -3.277196177, 3.320892126}, current_dynamic_timestep), control);
-    DDroneState k5(this->get_increment(&{k1, &k2, &k3, &k4}, {2.032407407, -8.0, 7.173489279, -0.205896686}, current_dynamic_timestep), control);
+    DDroneState k5(this->get_increment({&k1, &k2, &k3, &k4}, {2.032407407, -8.0, 7.173489279, -0.205896686}, current_dynamic_timestep), control);
     DDroneState k6(this->get_increment({&k1, &k2, &k3, &k4, &k5}, {-0.296296296, 2.0, -1.381676413, 0.45297271, -0.275}, current_dynamic_timestep), control);
 
     //get fifth order est for error correction
@@ -173,7 +173,7 @@ DDroneState::DDroneState(DroneState* state, V8f* control){
     V6f thrust_effect = state->model->thruster_effect * *control;
 
     //get the body frame forces and torques due to drag
-    V6f drag_effect = -state->model->first_order_drag_cofs *  state->twist + -state->model->second_order_drag_cofs * state->twist * state->twist.cwiseAbs();
+    V6f drag_effect = -state->model->first_order_drag_cofs.cwiseProduct(state->twist) + -state->model->second_order_drag_cofs.cwiseProduct(state->twist.cwiseProduct(state->twist.cwiseAbs()));
 
     //since the angular velocities will be minial, it is assumed that any effects caused by the angular drags being offset from the com is neglidable
     V3f offset_drag_effect = (state->model->cod - state->model->com).cross(drag_effect.block<3,1>(0,0));
@@ -186,7 +186,7 @@ DDroneState::DDroneState(DroneState* state, V8f* control){
 
     //get the effect caused by prop drag
     //NOTE this torque is not effected by the COM being offset from center of the drone... it balanaces out... (Pretty easy to conceptualize)
-    V3f prop_drag_effect(0.0, 0.0, state->model->convert_forces_to_w(control).dot(state->model->prop_drag));
+    V3f prop_drag_effect(0.0, 0.0, state->model->convert_forces_to_w(*control).dot(state->model->prop_drag));
 
     //centripical effects
     //for the sake of the centripital effects, making the assumption that the drone is a homogenous disk, therefore the com is the center of the disk
