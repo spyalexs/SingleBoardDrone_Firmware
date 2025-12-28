@@ -1,0 +1,4 @@
+Invoking command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350': /usr/bin/cmake /home/hollis/SingleBoardDrone_Firmware/SingleBoardDrone_RP2350 -DCMAKE_INSTALL_PREFIX=/home/hollis/SingleBoardDrone_Firmware/install/SingleBoardDrone_RP2350
+Invoked command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350' returned '0': /usr/bin/cmake /home/hollis/SingleBoardDrone_Firmware/SingleBoardDrone_RP2350 -DCMAKE_INSTALL_PREFIX=/home/hollis/SingleBoardDrone_Firmware/install/SingleBoardDrone_RP2350
+Invoking command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350': /usr/bin/cmake --build /home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350 -- -j24 -l24
+Invoked command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350' returned '0': /usr/bin/cmake --build /home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350 -- -j24 -l24

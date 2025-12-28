@@ -1,0 +1,137 @@
+[0.011s] Invoking command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350': /usr/bin/cmake /home/hollis/SingleBoardDrone_Firmware/SingleBoardDrone_RP2350 -DCMAKE_INSTALL_PREFIX=/home/hollis/SingleBoardDrone_Firmware/install/SingleBoardDrone_RP2350
+[0.024s] [0mPICO_SDK_PATH is /home/hollis/.pico-sdk/sdk/2.2.0[0m
+[0.025s] [0mTarget board (PICO_BOARD) is 'pico2'.[0m
+[0.025s] [0mUsing board configuration from /home/hollis/.pico-sdk/sdk/2.2.0/src/boards/include/boards/pico2.h[0m
+[0.028s] [0mAuto-converting non-specific PICO_PLATFORM='rp2350' to 'rp2350-arm-s'[0m
+[0.028s] [0mDefaulting platform (PICO_PLATFORM) to 'rp2350-arm-s' based on PICO_BOARD setting.[0m
+[0.029s] [0mDefaulting compiler (PICO_COMPILER) to 'pico_arm_cortex_m33_gcc' since not specified.[0m
+[0.029s] -- Defaulting build type to 'Release' since not specified.
+[0.029s] [0mConfiguring toolchain based on PICO_COMPILER 'pico_arm_cortex_m33_gcc'[0m
+[0.037s] [0mDefaulting PICO_GCC_TRIPLE to 'arm-none-eabi'[0m
+[0.185s] -- The C compiler identification is GNU 14.2.1
+[0.362s] -- The CXX compiler identification is GNU 14.2.1
+[0.374s] -- The ASM compiler identification is GNU
+[0.374s] -- Found assembler: /home/hollis/.pico-sdk/toolchain/14_2_Rel1/bin/arm-none-eabi-gcc
+[0.381s] -- Detecting C compiler ABI info
+[0.455s] -- Detecting C compiler ABI info - done
+[0.459s] -- Check for working C compiler: /home/hollis/.pico-sdk/toolchain/14_2_Rel1/bin/arm-none-eabi-gcc - skipped
+[0.461s] -- Detecting C compile features
+[0.462s] -- Detecting C compile features - done
+[0.465s] -- Detecting CXX compiler ABI info
+[0.537s] -- Detecting CXX compiler ABI info - done
+[0.539s] -- Check for working CXX compiler: /home/hollis/.pico-sdk/toolchain/14_2_Rel1/bin/arm-none-eabi-g++ - skipped
+[0.540s] -- Detecting CXX compile features
+[0.540s] -- Detecting CXX compile features - done
+[0.545s] [0mBuild type is Release[0m
+[0.563s] [0mUsing picotool from /home/hollis/.pico-sdk/picotool/2.2.0-a4/picotool/picotool[0m
+[0.683s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.736s] [0mTinyUSB available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/hw/bsp/rp2040; enabling build support for USB.[0m
+[0.743s] [0mBTstack available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/btstack[0m
+[0.746s] [0mcyw43-driver available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/cyw43-driver[0m
+[0.749s] [0mmbedtls available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/mbedtls[0m
+[0.751s] [0mlwIP available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/lwip[0m
+[0.782s] -- Configuring done
+[0.836s] -- Generating done
+[0.851s] -- Build files have been written to: /home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350
+[0.871s] Invoked command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350' returned '0': /usr/bin/cmake /home/hollis/SingleBoardDrone_Firmware/SingleBoardDrone_RP2350 -DCMAKE_INSTALL_PREFIX=/home/hollis/SingleBoardDrone_Firmware/install/SingleBoardDrone_RP2350
+[0.871s] Invoking command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350': /usr/bin/cmake --build /home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350 -- -j24 -l24
+[0.916s] [35m[1mScanning dependencies of target bs2_default[0m
+[0.930s] [  1%] [34m[1mGenerating blink.pio.h[0m
+[0.937s] [  2%] [32mBuilding ASM object pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.o[0m
+[0.942s] [  2%] Built target SingleBoardDrone_RP2350_blink_pio_h
+[0.963s] [  3%] [32m[1mLinking ASM executable bs2_default.elf[0m
+[1.020s] [  3%] Built target bs2_default
+[1.041s] [  4%] [34m[1mGenerating bs2_default.bin[0m
+[1.058s] [  5%] [34m[1mGenerating bs2_default_padded_checksummed.S[0m
+[1.094s] [35m[1mScanning dependencies of target bs2_default_library[0m
+[1.104s] [  6%] [32mBuilding ASM object pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o[0m
+[1.122s] [  6%] Built target bs2_default_library
+[1.134s] [35m[1mScanning dependencies of target SingleBoardDrone_RP2350[0m
+[1.178s] [  7%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/SingleBoardDrone_RP2350.c.o[0m
+[1.184s] [  8%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.o[0m
+[1.184s] [  9%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.o[0m
+[1.184s] [ 10%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.o[0m
+[1.184s] [ 13%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.o[0m
+[1.184s] [ 13%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2350/pico_platform/platform.c.o[0m
+[1.184s] [ 14%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.o[0m
+[1.184s] [ 15%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.o[0m
+[1.184s] [ 16%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.o[0m
+[1.184s] [ 17%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.o[0m
+[1.184s] [ 19%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.o[0m
+[1.184s] [ 19%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o[0m
+[1.185s] [ 20%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.S.o[0m
+[1.185s] [ 22%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.o[0m
+[1.187s] [ 22%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.o[0m
+[1.187s] [ 23%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.o[0m
+[1.187s] [ 25%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.o[0m
+[1.187s] [ 26%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.o[0m
+[1.187s] [ 27%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.o[0m
+[1.189s] [ 28%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.o[0m
+[1.192s] [ 29%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.o[0m
+[1.193s] [ 30%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.o[0m
+[1.203s] [ 31%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.o[0m
+[1.204s] [ 32%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.o[0m
+[1.232s] [ 33%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.o[0m
+[1.249s] [ 34%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.o[0m
+[1.251s] [ 35%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.o[0m
+[1.269s] [ 36%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.o[0m
+[1.270s] [ 38%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.o[0m
+[1.271s] [ 39%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.o[0m
+[1.279s] [ 41%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.o[0m
+[1.279s] [ 41%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.o[0m
+[1.289s] [ 42%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.c.o[0m
+[1.292s] [ 43%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.o[0m
+[1.300s] [ 44%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o[0m
+[1.301s] [ 45%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.o[0m
+[1.301s] [ 46%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o[0m
+[1.305s] [ 47%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o[0m
+[1.315s] [ 48%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_compiler.c.o[0m
+[1.337s] [ 50%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.o[0m
+[1.341s] [ 51%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_dcp.S.o[0m
+[1.351s] [ 52%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_fma_dcp.S.o[0m
+[1.354s] [ 53%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_sci_m33.S.o[0m
+[1.360s] [ 54%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_conv_m33.S.o[0m
+[1.368s] [ 57%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_common_m33.S.o[0m
+[1.368s] [ 57%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_conv32_vfp.S.o[0m
+[1.369s] [ 57%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.o[0m
+[1.374s] [ 58%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_sci_m33_vfp.S.o[0m
+[1.380s] [ 60%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.o[0m
+[1.380s] [ 60%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.o[0m
+[1.383s] [ 61%] [32mBuilding CXX object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o[0m
+[1.395s] [ 63%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o[0m
+[1.395s] [ 64%] [32mBuilding ASM object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.S.o[0m
+[1.395s] [ 65%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.o[0m
+[1.400s] [ 66%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.o[0m
+[1.401s] [ 67%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.o[0m
+[1.412s] [ 68%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.o[0m
+[1.412s] [ 69%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.o[0m
+[1.412s] [ 70%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.o[0m
+[1.421s] [ 71%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.o[0m
+[1.423s] [ 72%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.o[0m
+[1.427s] [ 73%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o[0m
+[1.432s] [ 75%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o[0m
+[1.437s] [ 76%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o[0m
+[1.449s] [ 77%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.o[0m
+[1.451s] [ 78%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.o[0m
+[1.465s] [ 79%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.o[0m
+[1.469s] [ 80%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.o[0m
+[1.471s] [ 81%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.o[0m
+[1.487s] [ 82%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o[0m
+[1.525s] [ 83%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.o[0m
+[1.529s] [ 84%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.o[0m
+[1.542s] [ 85%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.o[0m
+[1.542s] [ 86%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.o[0m
+[1.542s] [ 88%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.o[0m
+[1.549s] [ 89%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.o[0m
+[1.551s] [ 90%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.o[0m
+[1.554s] [ 92%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o[0m
+[1.556s] [ 92%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.o[0m
+[1.565s] [ 93%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.o[0m
+[1.584s] [ 94%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o[0m
+[1.588s] [ 95%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_i2c/i2c.c.o[0m
+[1.589s] [ 96%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_spi/spi.c.o[0m
+[1.596s] [ 97%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.o[0m
+[1.603s] [ 98%] [32mBuilding C object CMakeFiles/SingleBoardDrone_RP2350.dir/home/hollis/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_interp/interp.c.o[0m
+[1.942s] [100%] [32m[1mLinking CXX executable SingleBoardDrone_RP2350.elf[0m
+[2.038s] [100%] Built target SingleBoardDrone_RP2350
+[2.052s] Invoked command in '/home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350' returned '0': /usr/bin/cmake --build /home/hollis/SingleBoardDrone_Firmware/build/SingleBoardDrone_RP2350 -- -j24 -l24

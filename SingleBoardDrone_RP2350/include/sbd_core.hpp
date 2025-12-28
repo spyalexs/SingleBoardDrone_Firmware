@@ -2,6 +2,7 @@
 
 #include <Eigen/Dense>
 #include <cmath>
+#include <limits>
 
 #include "sbd_descriptions.hpp"
 
@@ -44,11 +45,11 @@ class DroneModel{
 class DroneState{
     public:
         DroneState();
-    
+
+        void step_dynamics(uint64_t step_size);
+        void step_dynamics_rigid(uint64_t step_size, uint64_t increment);
         void update_rk4(float dt, V8f* control);
-
-        void update_rk45(float dt, V8f* control);
-
+        void update_rk45(V8f* control);
 
         //for rk45 integration
         float current_dynamic_timestep = 0;
@@ -63,12 +64,18 @@ class DroneState{
         void update(DDroneState* ds, float dt);
         void update(std::vector<DDroneState*> dsv, std::vector<float> weights, float dt);
 
-        uint64_t stamp;
+        uint64_t stamp = 0;
 
         float get_error(DroneState* state2);
         
         DroneState get_increment(DDroneState *ds, float dt);
         DroneState get_increment(std::vector<DDroneState*> dsv, std::vector<float> weights, float dt);
+
+        void set_control(V8f control);
+
+    private:
+        V8f current_control;
+
 };
 
 class DDroneState{
@@ -96,22 +103,26 @@ class DDroneState{
 
         DDroneState operator* (float k){
 
-            d_lin_vel *= k;
-            d_ang_vel *= k;
-            d_pos *= k;
-            d_rot *= k;
+            DDroneState temp = *this;
 
-            return *this;
+            temp.d_lin_vel *= k;
+            temp.d_ang_vel *= k;
+            temp.d_pos *= k;
+            temp.d_rot *= k;
+
+            return temp;
         }  
         
         DDroneState operator/ (float k){
 
-            d_lin_vel /= k;
-            d_ang_vel /= k;
-            d_pos /= k;
-            d_rot /= k;
+            DDroneState temp = *this;
 
-            return *this;
+            temp.d_lin_vel /= k;
+            temp.d_ang_vel /= k;
+            temp.d_pos /= k;
+            temp.d_rot /= k;
+
+            return temp;
         }  
 
 };

@@ -1,0 +1,15 @@
+[0mPICO_SDK_PATH is /home/hollis/.pico-sdk/sdk/2.2.0[0m
+[0mTarget board (PICO_BOARD) is 'pico2'.[0m
+[0mUsing board configuration from /home/hollis/.pico-sdk/sdk/2.2.0/src/boards/include/boards/pico2.h[0m
+[0mAuto-converting non-specific PICO_PLATFORM='rp2350' to 'rp2350-arm-s'[0m
+[0mDefaulting platform (PICO_PLATFORM) to 'rp2350-arm-s' based on PICO_BOARD setting.[0m
+[0mDefaulting compiler (PICO_COMPILER) to 'pico_arm_cortex_m33_gcc' since not specified.[0m
+[0mConfiguring toolchain based on PICO_COMPILER 'pico_arm_cortex_m33_gcc'[0m
+[0mDefaulting PICO_GCC_TRIPLE to 'arm-none-eabi'[0m
+[0mBuild type is Release[0m
+[0mUsing picotool from /home/hollis/.pico-sdk/picotool/2.2.0-a4/picotool/picotool[0m
+[0mTinyUSB available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/tinyusb/hw/bsp/rp2040; enabling build support for USB.[0m
+[0mBTstack available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/btstack[0m
+[0mcyw43-driver available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/cyw43-driver[0m
+[0mmbedtls available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/mbedtls[0m
+[0mlwIP available at /home/hollis/.pico-sdk/sdk/2.2.0/lib/lwip[0m

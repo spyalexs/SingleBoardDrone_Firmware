@@ -46,6 +46,9 @@
 #define GRAVITY_VECTOR Eigen::Matrix<float, 3, 1>(0.0, 0.0, 9.81)
 
 //@brief rk45 integration error tolerance
-#define DYNAMIC_INTEGRATION_ERROR_TOLERANCE 1e7
+#define DYNAMIC_INTEGRATION_ERROR_TOLERANCE 1e-7
+
+//@brief
+#define DEFAULT_DYANMICS_STEP_SIZE 1000
 
 //copy test
